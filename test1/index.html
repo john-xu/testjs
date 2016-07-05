@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		position:absolute;
+		left:50%;
+		top:20px;
+		margin-left: -100px;
+		height:200px;
+		width:200px;
+		background: #317ef3;
+
+	}
+	.box:after{
+		position: absolute;
+		right:0;
+		bottom:0;
+		width:0;
+		height:0;
+		content:"";
+		border-left: 100px solid transparent;
+		border-right: 100px solid transparent;
+		border-bottom: 40px solid #fff;
+	}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>
