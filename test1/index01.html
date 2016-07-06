@@ -23,8 +23,17 @@
   var show=document.getElementById('aqi-display');
   var inpt=document.getElementById('aqi-input');
   var btn=document.getElementById('button');
+  function handler(){
+    var num=parseInt(inpt.value);
+    if((!isNaN(num))){
+      show.innerHTML=num;
+    }
+    else{
+      show.innerHTML="请输入北京今天空气质量";
+    }
+  }
   btn.onclick=function(){
-    show.innerHTML=inpt.value;
+    handler();
   }
 })();
 
