@@ -42,7 +42,7 @@ var aqiData = [
   aqiData.sort(function(a,b){
     return b[1]-a[1];
   })
-  for(var i=0;i<=aqiData.length;i++){
+  for(var i=0;i<aqiData.length;i++){
     if(aqiData[i][1]>60){
       var Oli=document.createElement("li");
       Oli.innerHTML="第"+arr[i]+"名："+aqiData[i][0]+aqiData[i][1]+"<br />"; 
