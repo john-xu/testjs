@@ -35,18 +35,19 @@
   }
   btn.onclick=function(){
     handler();
-  }
-})();*/
-
-$("#button").on("click",function(){
+  }*/
+  $("#button").on("click",function(){
   var Oval=$("#aqi-input").val();
   if(!isNaN(parseInt(Oval))){
-    $("#aqi-display").html=Oval;
+    $("#aqi-display").html(Oval);
   }
   else{
     alert("请输入北京今天空气质量");
   }
 })
+})();
+
+
 
 </script>
 </body>
