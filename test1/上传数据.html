@@ -79,7 +79,14 @@
 	<script>
 	//增加列
 		$("#v3_input").on("click",function(){
-			var $otr="<tr><td>"+$('#v1').val()+"</td>+<td>"+$('#select option:selected').val()+"</td>+<td>"+$('#v2').val()+"<td><a href='#' class='del'>删除</a></td>"+"</td></tr>";
+			var $otr = '<tr>' +
+					   '<td>' + $('#v1').val() + '</td>' +
+					   '<td>' + $('#select option:selected').val() + '</td>' +
+					   '<td>' + $('#v2').val() + '</td>' +
+					   '<td><a href="#" class="del">删除</a></td>' +
+					   '</tr>';
+
+			// var $otr = "<tr><td>"+$('#v1').val()+"</td>+<td>"+$('#select option:selected').val()+"</td>+<td>"+$('#v2').val()+"<td><a href='#' class='del'>删除</a></td>"+"</td></tr>";
 			$($otr).appendTo($(".table"));
 		})
 	//删除
