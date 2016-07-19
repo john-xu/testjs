@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上传数据</title>
+	<link rel="stylesheet" href="Content/base.css">
+	<link rel="stylesheet" href="Content/index.css">
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="sel_batch">
+			<p class="text">选择批次</p>
+			<select id="sel_batch">
+				<option value="1">2016第一季度</option>
+				<option value="2">2016第二季度</option>
+				<option value="3">2016第三季度</option>
+				<option value="4">2016第四季度</option>
+			</select>
+		</div>
+		<div class="reset_header">
+			<p class="text">设置表头</p>
+			<label for="">
+				列名&nbsp;
+				<input type="text" class="inpt" id="v1">
+			</label>
+			<label for="">
+				运算符&nbsp;
+				<select name="" id="select">
+					<option value="0">无</option>
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+				</select>
+			</label>
+			<label for="">
+				运算值&nbsp;
+				<input type="text" class="inpt" id="v2">
+			</label>
+			<input type="button" value="增加列" class="add_btn btn" id="v3_input">
+		</div>
+		<table class="table" width="512" border="0" cellspacing="1" cellpadding="0">
+			<tr>
+				<td width="100">列名</td>
+				<td width="100">运算符</td>
+				<td width="128">运算值</td>
+				<td width="184">操作</td>
+			</tr>
+			<tr>
+				<td>客户编号</td>
+				<td>无</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>日均金融总量</td>
+				<td>*</td>
+				<td>1.75</td>
+				<td><a href="#" class="del">删除</a></td>
+			</tr>
+			<tr>
+				<td>存款时点余额</td>
+				<td>*</td>
+				<td>0.12</td>
+				<td><a href="#" class="del">删除</a></td>
+			</tr>
+		</table>
+		<div class="upload">
+			<p class="text">上传数据文件</p>
+			<input type="text" class="inpt">
+			<input type="button" value="选择文件" class="btn">
+			<p class="Explain"> (Excel文件列名请与设置表头一致,客户编号必填) </p>
+		</div>
+		<div class="submit_btn">
+			<input type="submit" value="确定上传" class="btn">
+		</div>
+	</div>
+	<script>
+	//增加列
+		$("#v3_input").on("click",function(){
+			var $otr="<tr><td>"+$('#v1').val()+"</td>+<td>"+$('#select option').val()+"</td>+<td>"+$('#v2').val()+"<td><a href='#' class='del'>删除</a></td>"+"</td></tr>";
+			$($otr).appendTo($(".table"));
+		})
+	//删除
+		$(".del").on("click",function(){
+			$(this).parent().parent().hide();
+		})
+	</script>
+</body>
+</html>
