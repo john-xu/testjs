@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="avalon.js"></script>
+</head>
+<body>
+	<div ms-controller="wrap">{{a}}</div>
+	<script>
+	var abc=avalon.define({
+		$id:"wrap",
+		a:"hello"
+	});
+	avalon.scan();
+	</script>
+</body>
+</html>

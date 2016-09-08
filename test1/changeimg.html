@@ -1,18 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<script src="avalon.js"></script>
+<html>
+<body>
+<head>   
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta http-equiv="viewport" content="initial-scale=1.0,user-scalable=no">
+<style>
+#url{
+    width:400px;
+}
+</style>
 </head>
 <body>
-	<div ms-controller="wrap">{{a}}</div>
-	<script>
-	var abc=avalon.define({
-		$id:"wrap",
-		a:"hello"
-	});
-	avalon.scan();
-	</script>
+<form  method="get"  target="_self">
+    url:<input  type="url" name=url id="url">
+        <input type="submit" name="提交" id="submit">
+        解析地址：<div id="analysis"></div>
+ 
+</form>
+<script type="text/javascript" src="jquery-1.12.2.min.js"></script>
+<script type="text/javascript">
+ var list={};
+ $('#submit').on('click',function(){
+ 	var urlValue=document.getElementById('url').value;
+ 	var pathname=urlValue.split('?')[1];
+ 	var itemlist=pathname.split('&');
+ 	for(i=0;i<itemlist.length;i++){
+ 		var itemvalue=itemlist[i].split('=');
+ 		if(itemvalue[1]){
+ 			list[itemvalue[0]]==itemvalue[1];
+ 		}
+ 		else{
+ 			list[itemvalue[0]]=='undefined';
+ 		}
+ 	}
+ 	alert(JSON.stringify(list));
+ })
+
+</script>
 </body>
 </html>
